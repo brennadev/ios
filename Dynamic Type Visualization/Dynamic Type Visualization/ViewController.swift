@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Dynamic type test
+//  Dynamic Type Visualization
 //
 //  Created by Brenna Olson on 2/1/17.
 //  Copyright © 2017-2018 Brenna Olson. All rights reserved.
