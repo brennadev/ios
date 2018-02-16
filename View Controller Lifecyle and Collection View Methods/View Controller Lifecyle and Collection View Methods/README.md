@@ -3,6 +3,8 @@ Interactively learn when view controller lifecyle methods, [`UICollectionViewDel
 
 When each lifecycle method or delegate method is called, it'll print the method name in the console. Some print statements may also show useful information associated with the method.
 
+To get started with this app, run it and try tapping a collection view cell or scrolling the collection view.
+
 #### The methods included are:
 - [`UIViewController`](https://developer.apple.com/documentation/uikit/uiviewcontroller):
     - `viewDidLoad()`

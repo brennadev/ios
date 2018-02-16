@@ -13,13 +13,7 @@ private let reuseIdentifier = "Cell"
 
 class CollectionViewController: UICollectionViewController {
     
-    @IBOutlet weak var leftBarButtonItem: UIBarButtonItem!
-    // TODO: the reason this is here is because when scrolling, there's a lot of viewWillLayoutSubviews and viewDidLayoutSubviews calls - my goal is to just show the first set of those calls (or 2 or however many more if there's a cellForItemAt, etc. call)
-    var shouldPrintLayoutSubviews = true
-    
-    /// Makes sure lines for viewWillLayoutSubviews and viewDidLayoutSubviews are printed after a cellForItemAt call
-    var isAfterCellForItemAt = false
-    
+    // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         print("\n")
@@ -31,7 +25,6 @@ class CollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //shouldPrintLayoutSubviews = true
         printSeparator()
         print("|    ***CollectionViewController***    |")
         printSeparator()
@@ -44,20 +37,11 @@ class CollectionViewController: UICollectionViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        //if shouldPrintLayoutSubviews || isAfterCellForItemAt {
-            print("viewWillLayoutSubviews()")
-        //}
+        print("viewWillLayoutSubviews()")
     }
     
     override func viewDidLayoutSubviews() {
-        //if shouldPrintLayoutSubviews || isAfterCellForItemAt {
-            print("viewDidLayoutSubviews()")
-        //}
-        
-        //if !shouldPrintLayoutSubviews {
-            //isAfterCellForItemAt = false
-        //}
-        //shouldPrintLayoutSubviews = false
+        print("viewDidLayoutSubviews()")
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,12 +51,10 @@ class CollectionViewController: UICollectionViewController {
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         print("viewWillTransition to size()")
-        //shouldPrintLayoutSubviews = true
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         print("willTransition(to:with:)")
-        //shouldPrintLayoutSubviews = true
     }
     
     
@@ -81,72 +63,55 @@ class CollectionViewController: UICollectionViewController {
         if segue.identifier == "masterToDetail" {
             print("prepare(for:sender:))")
         }
-        //shouldPrintLayoutSubviews = true
     }
     
 
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         print("numberOfSections(in:)")
-        //shouldPrintLayoutSubviews = true
         return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("collectionView(_:numberOfItemsInSection:) for section \(section)")
-        //shouldPrintLayoutSubviews = true
         return 10
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        cell.backgroundColor = UIColor.cyan
-        
-        // only want line below when not scrolling (when view initially shows, there's no viewWillLayoutSubviews or viewDidLayoutSubviews calls between the cellForItemAt calls
-        // I think the thing I noted above may be the only thing that needs to be fixed
-        //print("viewWillLayoutSubviews()")
+        cell.contentView.backgroundColor = UIColor.cyan
+
         print("collectionView(_:cellForItemAt:) at item \(indexPath.item)")
-        
-        // flags controlling viewWillLayoutSubviews/viewDidLayoutSubviews output
-        //shouldPrintLayoutSubviews = true
-        //isAfterCellForItemAt = true
         
         return cell
     }
 
     // MARK: UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        //shouldPrintLayoutSubviews = true
         return true
     }
     
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        //shouldPrintLayoutSubviews = true
         return true
     }
     
     override func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
-        //shouldPrintLayoutSubviews = true
         return true
     }
     
     override func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         print("collectionView(_:didHighlightItemAt:) at item \(indexPath.item)")
-        //shouldPrintLayoutSubviews = true
     }
     
     override func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         print("collectionView(_:didUnhighlightItemAt:) at item \(indexPath.item)")
-        //shouldPrintLayoutSubviews = true
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("collectionView(_:didSelectItemAt:) at item \(indexPath.item)")
-        //shouldPrintLayoutSubviews = true
     }
     
     override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         print("collectionView(_:didDeselectItemAt:) at item \(indexPath.item)")
-        //shouldPrintLayoutSubviews = true
     }
 }

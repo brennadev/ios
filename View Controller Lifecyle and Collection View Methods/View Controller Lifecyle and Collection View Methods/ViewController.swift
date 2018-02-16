@@ -9,8 +9,9 @@
 
 import UIKit
 
+/// The view controller that shows after the user taps on a collection view cell in CollectionViewController
 class ViewController: UIViewController {
-    
+    // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         print("\n")
