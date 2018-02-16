@@ -44,6 +44,7 @@
 		65EFF05220350B73005AD6A1 = {
 			isa = PBXGroup;
 			children = (
+				65EFF07320350BAA005AD6A1 /* README.md */,
 				65EFF05D20350B73005AD6A1 /* View Controller Lifecyle and Collection View Methods */,
 				65EFF05C20350B73005AD6A1 /* Products */,
 			);
@@ -66,7 +67,6 @@
 				65EFF07E20350BB8005AD6A1 /* LaunchScreen.storyboard */,
 				65EFF07F20350BB8005AD6A1 /* Main.storyboard */,
 				65EFF07620350BAB005AD6A1 /* Info.plist */,
-				65EFF07320350BAA005AD6A1 /* README.md */,
 				65EFF07C20350BB0005AD6A1 /* Assets.xcassets */,
 				65EFF07520350BAB005AD6A1 /* ViewController.swift */,
 			);
