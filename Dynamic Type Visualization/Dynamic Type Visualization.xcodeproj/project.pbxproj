@@ -73,6 +73,7 @@
 		653298922033D65D00AFE16A = {
 			isa = PBXGroup;
 			children = (
+				653298CE2033D67C00AFE16A /* README.md */,
 				6532989D2033D65D00AFE16A /* Dynamic Type Visualization */,
 				6532989C2033D65D00AFE16A /* Products */,
 			);
@@ -96,7 +97,6 @@
 				653298DB2033D7ED00AFE16A /* LaunchScreen.storyboard */,
 				653298DD2033D7F400AFE16A /* Main.storyboard */,
 				653298CD2033D67C00AFE16A /* Info.plist */,
-				653298CE2033D67C00AFE16A /* README.md */,
 				653298D02033D67C00AFE16A /* ViewController.swift */,
 			);
 			path = "Dynamic Type Visualization";
