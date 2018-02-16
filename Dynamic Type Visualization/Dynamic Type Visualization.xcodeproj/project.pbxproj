@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		653298D42033D67D00AFE16A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653298CC2033D67B00AFE16A /* Assets.xcassets */; };
-		653298D52033D67D00AFE16A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 653298CD2033D67C00AFE16A /* Info.plist */; };
 		653298D62033D67D00AFE16A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 653298CE2033D67C00AFE16A /* README.md */; };
 		653298D82033D67D00AFE16A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653298D02033D67C00AFE16A /* ViewController.swift */; };
 		653298DA2033D67D00AFE16A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653298D32033D67D00AFE16A /* AppDelegate.swift */; };
@@ -212,7 +211,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				653298D62033D67D00AFE16A /* README.md in Resources */,
-				653298D52033D67D00AFE16A /* Info.plist in Resources */,
 				653298DE2033D7F400AFE16A /* Main.storyboard in Resources */,
 				653298DC2033D7ED00AFE16A /* LaunchScreen.storyboard in Resources */,
 				653298D42033D67D00AFE16A /* Assets.xcassets in Resources */,
